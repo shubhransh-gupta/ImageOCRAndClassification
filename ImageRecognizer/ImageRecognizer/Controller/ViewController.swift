@@ -40,10 +40,14 @@ extension ViewController {
     private func setUI() {
         self.currentImageView.image = UIImage(named: "defaultIcon")
         self.setBottomTabBar()
+        scrollView.contentSize = contentView.bounds.size
+        scrollView.contentSize = CGSize(width: contentView.bounds.size.width, height: contentView.bounds.size.height)
         setUpScrollableView()
     }
     
     func setUpScrollableView() {
+        scrollView.minimumZoomScale = 1.0
+        scrollView.maximumZoomScale = 1.0
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -59,7 +63,6 @@ extension ViewController {
             // Add constraints for the content views within contentView
         ])
         
-        scrollView.contentSize = contentView.bounds.size
     }
 }
 

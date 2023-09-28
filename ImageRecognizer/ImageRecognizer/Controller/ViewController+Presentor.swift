@@ -107,17 +107,15 @@ extension ViewController {
 
 extension ViewController {
     @objc func sharePic(_ sender: UITapGestureRecognizer) {
-        
         let activityViewController = UIActivityViewController(activityItems: [images[currentIndex ?? 0]], applicationActivities: nil)
-
-                // Present the UIActivityViewController
-                if let popoverController = activityViewController.popoverPresentationController {
-                    popoverController.sourceView = self.view
-                    popoverController.sourceRect = CGRect(x: self.previewCollectionView.frame.midX, y: self.previewCollectionView.frame.midY, width: 0, height: 0)
-                    popoverController.permittedArrowDirections = []
-                }
-
-                present(activityViewController, animated: true, completion: nil)
+        // Present the UIActivityViewController
+        if let popoverController = activityViewController.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.previewCollectionView.frame.midX, y: self.previewCollectionView.frame.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
+        
+        present(activityViewController, animated: true, completion: nil)
     }
     
     @objc func deletePic(_ sender: UITapGestureRecognizer) {
@@ -137,7 +135,6 @@ extension ViewController {
 extension ViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        self.setUpScrollableView()
-        // Update UI for the new size (e.g., handle landscape/portrait layout changes)
+        scrollView.contentSize = CGSize(width: self.view.frame.size.height, height: self.view.bounds.size.height)
     }
 }
