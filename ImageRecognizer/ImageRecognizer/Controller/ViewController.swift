@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var previewCollectionView: UICollectionView!
     @IBOutlet weak var currentImageView: UIImageView!
-    @IBOutlet weak var bottomBar: UIView!
+    @IBOutlet weak var bottomBar: UIStackView!
     
     var images : [UIImage] = []
     
@@ -37,6 +37,7 @@ extension ViewController {
     
     private func setUI() {
         self.currentImageView.image = UIImage(named: "defaultIcon")
+        self.setBottomTabBar()
     }
     
 }

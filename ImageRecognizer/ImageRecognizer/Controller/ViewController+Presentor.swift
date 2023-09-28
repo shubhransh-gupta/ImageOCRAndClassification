@@ -7,6 +7,7 @@
 
 import Foundation
 import Photos
+import UIKit
 
 extension ViewController {
     
@@ -52,8 +53,40 @@ extension ViewController {
 
 extension ViewController {
     
-    private func setBottomTabBar() {
+    func setBottomTabBar() {
         
+        if let tab1 = Bundle.main.loadNibNamed("BottomBarViewsTableViewCell", owner: nil)?.first as? BottomBarViewsTableViewCell {
+            tab1.logoImage.image = UIImage(systemName: "square.and.arrow.up")
+            tab1.logoImage.tintColor = UIColor.systemBlue // Set the tint color
+            tab1.logoImage.contentMode = .scaleAspectFit // Adjust content mode for sizing
+            tab1.logoImage.frame.size = CGSize(width: 30, height: 30)
+            tab1.labelName.text = "Share"
+            bottomBar.addArrangedSubview(tab1)
+        }
+        
+        if let tab2 = Bundle.main.loadNibNamed("BottomBarViewsTableViewCell", owner: nil)?.first as? BottomBarViewsTableViewCell {
+            tab2.logoImage.image = UIImage(systemName: "info.circle")
+            tab2.logoImage.tintColor = UIColor.systemBlue // Set the tint color
+            tab2.logoImage.contentMode = .scaleAspectFit // Adjust content mode for sizing
+            tab2.logoImage.frame.size = CGSize(width: 30, height: 30)
+            tab2.labelName.text = "Info"
+            bottomBar.addArrangedSubview(tab2)
+        }
+        
+        if let tab3 = Bundle.main.loadNibNamed("BottomBarViewsTableViewCell", owner: nil)?.first as? BottomBarViewsTableViewCell {
+            tab3.logoImage.image = UIImage(systemName: "bin.xmark.fill")
+            tab3.logoImage.tintColor = UIColor.systemBlue // Set the tint color
+            tab3.logoImage.contentMode = .scaleAspectFit // Adjust content mode for sizing
+            tab3.logoImage.frame.size = CGSize(width: 30, height: 30)
+            tab3.labelName.text = "Delete"
+            bottomBar.addArrangedSubview(tab3)
+        }
+        
+        self.bottomBar.spacing = 5 // Set the spacing between views
+        self.bottomBar.alpha = 1
+        self.bottomBar.axis = .horizontal
+        self.bottomBar.alignment = .fill
+        self.bottomBar.distribution = .fillEqually
     }
     
 }

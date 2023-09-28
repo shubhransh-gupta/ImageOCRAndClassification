@@ -38,16 +38,16 @@
                                                 </collectionViewFlowLayout>
                                                 <cells/>
                                             </collectionView>
-                                            <view contentMode="scaleToFill" id="YCm-Nc-8b8">
-                                                <rect key="frame" x="8" y="684" width="377" height="75"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dg4-9y-aVd">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="504"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" name="AccentColor"/>
                                             </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oh6-EU-IUW">
+                                                <rect key="frame" x="0.0" y="672" width="393" height="63"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                            </stackView>
                                         </subviews>
                                         <viewLayoutGuide key="contentLayoutGuide" id="EZw-4x-bYa"/>
                                         <viewLayoutGuide key="frameLayoutGuide" id="bar-8e-K8d"/>
@@ -65,7 +65,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bottomBar" destination="YCm-Nc-8b8" id="dWf-S4-uiG"/>
+                        <outlet property="bottomBar" destination="Oh6-EU-IUW" id="vLS-JG-n0n"/>
                         <outlet property="currentImageView" destination="Dg4-9y-aVd" id="4NB-HK-kwb"/>
                         <outlet property="previewCollectionView" destination="UVU-mE-PWs" id="eLb-4j-Air"/>
                     </connections>
@@ -79,6 +79,9 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
