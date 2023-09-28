@@ -32,6 +32,8 @@ extension ViewController {
                 // Permission not determined, handle accordingly (you can request again)
                 print("Permission not determined.")
                 OnPermissionDenied("Permission not determined.")
+            case .limited:
+                print("Permission is limited.")
             @unknown default:
                 break
             }
@@ -59,8 +61,12 @@ extension ViewController {
             tab1.logoImage.image = UIImage(systemName: "square.and.arrow.up")
             tab1.logoImage.tintColor = UIColor.systemBlue // Set the tint color
             tab1.logoImage.contentMode = .scaleAspectFit // Adjust content mode for sizing
-            tab1.logoImage.frame.size = CGSize(width: 30, height: 30)
+            tab1.logoImage.frame.size = CGSize(width: 35, height: 40)
             tab1.labelName.text = "Share"
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(sharePic(_:)))
+            tapGesture.numberOfTapsRequired = 1
+            tapGesture.numberOfTouchesRequired = 1
+            tab1.addGestureRecognizer(tapGesture)
             bottomBar.addArrangedSubview(tab1)
         }
         
@@ -68,8 +74,12 @@ extension ViewController {
             tab2.logoImage.image = UIImage(systemName: "info.circle")
             tab2.logoImage.tintColor = UIColor.systemBlue // Set the tint color
             tab2.logoImage.contentMode = .scaleAspectFit // Adjust content mode for sizing
-            tab2.logoImage.frame.size = CGSize(width: 30, height: 30)
+            tab2.logoImage.frame.size = CGSize(width: 35, height: 40)
             tab2.labelName.text = "Info"
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(infoButtonPressed(_:)))
+            tapGesture.numberOfTapsRequired = 1
+            tapGesture.numberOfTouchesRequired = 1
+            tab2.addGestureRecognizer(tapGesture)
             bottomBar.addArrangedSubview(tab2)
         }
         
@@ -77,8 +87,12 @@ extension ViewController {
             tab3.logoImage.image = UIImage(systemName: "bin.xmark.fill")
             tab3.logoImage.tintColor = UIColor.systemBlue // Set the tint color
             tab3.logoImage.contentMode = .scaleAspectFit // Adjust content mode for sizing
-            tab3.logoImage.frame.size = CGSize(width: 30, height: 30)
+            tab3.logoImage.frame.size = CGSize(width: 35, height: 40)
             tab3.labelName.text = "Delete"
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(deletePic(_:)))
+            tapGesture.numberOfTapsRequired = 1
+            tapGesture.numberOfTouchesRequired = 1
+            tab3.addGestureRecognizer(tapGesture)
             bottomBar.addArrangedSubview(tab3)
         }
         
@@ -89,4 +103,41 @@ extension ViewController {
         self.bottomBar.distribution = .fillEqually
     }
     
+}
+
+extension ViewController {
+    @objc func sharePic(_ sender: UITapGestureRecognizer) {
+        
+        let activityViewController = UIActivityViewController(activityItems: [images[currentIndex ?? 0]], applicationActivities: nil)
+
+                // Present the UIActivityViewController
+                if let popoverController = activityViewController.popoverPresentationController {
+                    popoverController.sourceView = self.view
+                    popoverController.sourceRect = CGRect(x: self.previewCollectionView.frame.midX, y: self.previewCollectionView.frame.midY, width: 0, height: 0)
+                    popoverController.permittedArrowDirections = []
+                }
+
+                present(activityViewController, animated: true, completion: nil)
+    }
+    
+    @objc func deletePic(_ sender: UITapGestureRecognizer) {
+        self.images[currentIndex ?? 0] = UIImage(named: "defaultIcon")!
+        DispatchQueue.main.async {
+            self.previewCollectionView.reloadData()
+            self.currentImageView.image = UIImage(named: "defaultIcon")
+        }
+    }
+    
+    @objc func infoButtonPressed(_ sender: UITapGestureRecognizer) {
+        
+    }
+    
+}
+
+extension ViewController {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        self.setUpScrollableView()
+        // Update UI for the new size (e.g., handle landscape/portrait layout changes)
+    }
 }

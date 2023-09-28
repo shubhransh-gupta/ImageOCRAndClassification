@@ -9,12 +9,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var previewCollectionView: UICollectionView!
     @IBOutlet weak var currentImageView: UIImageView!
     @IBOutlet weak var bottomBar: UIStackView!
     
     var images : [UIImage] = []
+    var currentIndex : Int? 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +40,27 @@ extension ViewController {
     private func setUI() {
         self.currentImageView.image = UIImage(named: "defaultIcon")
         self.setBottomTabBar()
+        setUpScrollableView()
     }
     
+    func setUpScrollableView() {
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            // Add constraints for the content views within contentView
+        ])
+        
+        scrollView.contentSize = contentView.bounds.size
+    }
 }
 
 extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate {
@@ -54,6 +75,7 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        currentIndex = indexPath.item
         currentImageView.image = images[indexPath.item]
     }
 

@@ -7,7 +7,10 @@
 import Vision
 import UIKit
 
+
 class VisionServices {
+    weak var commsDelegate : DataTransferDelegate?
+    
     func performOCR(_ image: UIImage) {
         let textRecognitionRequest = VNRecognizeTextRequest { request, error in
             if let error = error {
@@ -35,7 +38,9 @@ class VisionServices {
     }
     
     func updateDataModelWithOCRText(_ text: String) {
-        // Implement logic to update your app's data model with the extracted text
+        if let delegate = commsDelegate {
+            delegate.didReceiveData(data: text)
+        }
     }
     
 }
