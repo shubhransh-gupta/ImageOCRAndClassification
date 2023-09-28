@@ -49,3 +49,11 @@ extension ViewController {
     
     
 }
+
+extension ViewController {
+    
+    private func setBottomTabBar() {
+        
+    }
+    
+}

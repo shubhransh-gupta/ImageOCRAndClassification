@@ -31,8 +31,8 @@ extension ViewController {
     
     private func registerCollectionView() {
         previewCollectionView.register(UINib(nibName: "PreviewsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PreviewsCollectionViewCell")
-        previewCollectionView.dataSource = self
         previewCollectionView.delegate = self
+        previewCollectionView.dataSource = self
     }
     
     private func setUI() {
@@ -48,7 +48,6 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PreviewsCollectionViewCell", for: indexPath) as! PreviewsCollectionViewCell
-         
          cell.previewCells.image  = images[indexPath.item]
          return cell
     }
@@ -63,7 +62,7 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate 
 extension ViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // Calculate the cell size here
-        let cellWidth: CGFloat = 80 // Set your desired width
+        let cellWidth: CGFloat = self.previewCollectionView.frame.size.width / 11 // Set your desired width
         let cellHeight: CGFloat = 100 // Set your desired height
         print("Shubhransh Gupta")
         return CGSize(width: cellWidth, height: cellHeight)

@@ -15,6 +15,11 @@ class PreviewsCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.previewCells.image = nil
+    }
 
 }
 
