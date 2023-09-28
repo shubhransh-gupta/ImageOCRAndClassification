@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "5A1338B6-FEB2-44A1-8304-7723BB5B38DE"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4F4C7EA0-5149-42C2-BD5D-90BFBC88D6D6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageRecognizer/Service/PhotoService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "fetchImages(OnSuccess:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4F4C7EA0-5149-42C2-BD5D-90BFBC88D6D6 - 4e7008244b5af563"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.UIImage&gt;, Swift.Optional&lt;Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;&gt;) -&gt; () in ImageRecognizer.PhotoService.fetchImages(OnSuccess: (Swift.Optional&lt;Swift.Array&lt;__C.UIImage&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ImageRecognizer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhranshgupta/Desktop/ImageRecognizer/ImageRecognizer/Service/PhotoService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "4F4C7EA0-5149-42C2-BD5D-90BFBC88D6D6 - 4e7008244b5af563"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.UIImage&gt;, Swift.Optional&lt;Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;&gt;) -&gt; () in ImageRecognizer.PhotoService.fetchImages(OnSuccess: (Swift.Optional&lt;Swift.Array&lt;__C.UIImage&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ImageRecognizer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhranshgupta/Desktop/ImageRecognizer/ImageRecognizer/Service/PhotoService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "244">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0F4E355F-4AB3-46A3-9D09-05800841B0BE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageRecognizer/Service/PhotoService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "fetchImages(OnSuccess:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0F4E355F-4AB3-46A3-9D09-05800841B0BE - 4e7008244b5af58e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.UIImage&gt;, Swift.Optional&lt;Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;&gt;) -&gt; () in ImageRecognizer.PhotoService.fetchImages(OnSuccess: (Swift.Optional&lt;Swift.Array&lt;__C.UIImage&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ImageRecognizer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhranshgupta/Desktop/ImageRecognizer/ImageRecognizer/Service/PhotoService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "468">
+               </Location>
+               <Location
+                  uuid = "0F4E355F-4AB3-46A3-9D09-05800841B0BE - d33bf570b135ae00"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;__C.UIImage&gt;, Swift.Optional&lt;Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;&gt;) -&gt; () in ImageRecognizer.PhotoService.fetchImages(OnSuccess: (Swift.Optional&lt;Swift.Array&lt;__C.UIImage&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ImageRecognizer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhranshgupta/Desktop/ImageRecognizer/ImageRecognizer/Service/PhotoService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "05FA1217-7BE7-48AC-9A65-AA80986BD37B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageRecognizer/Controller/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9B41EBC8-2F71-44F1-ABED-0666FC75F593"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageRecognizer/Controller/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
