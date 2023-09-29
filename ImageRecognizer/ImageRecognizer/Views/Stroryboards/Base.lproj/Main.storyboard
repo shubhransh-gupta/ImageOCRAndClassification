@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="landscape" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -14,62 +14,50 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageRecognizer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="LP5-G2-ee6">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="DBq-Ah-cuZ">
+                                <rect key="frame" x="-1" y="47" width="393" height="758"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" id="DBq-Ah-cuZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zr3-iW-t3F">
+                                        <rect key="frame" x="-20" y="-20" width="853" height="775"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zr3-iW-t3F">
-                                                <rect key="frame" x="-20" y="-20" width="853" height="775"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <subviews>
-                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" id="UVU-mE-PWs">
-                                                        <rect key="frame" x="28" y="532" width="384" height="95"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8pB-jr-X8O">
-                                                            <size key="itemSize" width="128" height="128"/>
-                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                        </collectionViewFlowLayout>
-                                                        <cells/>
-                                                    </collectionView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dg4-9y-aVd">
-                                                        <rect key="frame" x="17" y="20" width="395" height="504"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
-                                                        <color key="backgroundColor" name="AccentColor"/>
-                                                    </imageView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" id="Oh6-EU-IUW">
-                                                        <rect key="frame" x="20" y="722" width="392" height="63"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                                                    </stackView>
-                                                </subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" dataMode="prototypes" id="UVU-mE-PWs">
+                                                <rect key="frame" x="28" y="532" width="384" height="95"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            </view>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8pB-jr-X8O">
+                                                    <size key="itemSize" width="128" height="128"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells/>
+                                            </collectionView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" id="Dg4-9y-aVd">
+                                                <rect key="frame" x="17" y="20" width="395" height="504"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="Oh6-EU-IUW">
+                                                <rect key="frame" x="19" y="722" width="393" height="63"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                            </stackView>
                                         </subviews>
-                                        <viewLayoutGuide key="contentLayoutGuide" id="EZw-4x-bYa"/>
-                                        <viewLayoutGuide key="frameLayoutGuide" id="bar-8e-K8d"/>
-                                    </scrollView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                 </subviews>
-                            </stackView>
+                                <viewLayoutGuide key="contentLayoutGuide" id="EZw-4x-bYa"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="bar-8e-K8d"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="LP5-G2-ee6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1di-nn-mc0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LP5-G2-ee6" secondAttribute="bottom" id="EPF-Ub-Yv2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LP5-G2-ee6" secondAttribute="trailing" id="Gzn-Vv-eeZ"/>
-                            <constraint firstItem="LP5-G2-ee6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vbI-Hx-rgN"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="bottomBar" destination="Oh6-EU-IUW" id="vLS-JG-n0n"/>
@@ -82,6 +70,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="106.10687022900763" y="2.1126760563380285"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="11b-w1-k78">
+            <objects>
+                <viewController storyboardIdentifier="DetailsViewController" id="Pc3-bK-dfl" customClass="DetailsViewController" customModule="ImageRecognizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P2Z-fV-pct">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="TP8-6f-MSd">
+                                <rect key="frame" x="0.0" y="59" width="393" height="768"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2Bu-ow-lzw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="TP8-6f-MSd" id="btU-eV-w8E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dlb-uW-aEb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1185.4961832061069" y="8.4507042253521139"/>
         </scene>
     </scenes>
     <resources>

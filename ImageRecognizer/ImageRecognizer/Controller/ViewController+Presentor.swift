@@ -135,6 +135,26 @@ extension ViewController {
 extension ViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        scrollView.contentSize = CGSize(width: self.view.frame.size.height, height: self.view.bounds.size.height)
+    
+        if UIDevice.current.orientation.isPortrait {
+            // Portrait orientation
+            scrollView.isScrollEnabled = false
+        } else {
+            // Landscape orientation
+            scrollView.isScrollEnabled = true
+            centerViewsInLandscape()
+        }
+//        self.setUpScrollableView()
     }
+    
+    func centerViewsInLandscape() {
+        // Center containerView horizontally and vertically
+        contentView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        contentView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    
+        // Center subView within containerView horizontally and vertically
+        currentImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        currentImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+    }
+
 }

@@ -41,7 +41,7 @@ extension ViewController {
         self.currentImageView.image = UIImage(named: "defaultIcon")
         self.setBottomTabBar()
         scrollView.contentSize = contentView.bounds.size
-        scrollView.contentSize = CGSize(width: contentView.bounds.size.width, height: contentView.bounds.size.height)
+        scrollView.isScrollEnabled = false
         setUpScrollableView()
     }
     
@@ -50,16 +50,16 @@ extension ViewController {
         scrollView.maximumZoomScale = 1.0
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            contentView.topAnchor.constraint(equalTo: view.topAnchor),
+            contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            contentView.widthAnchor.constraint(equalTo: view.widthAnchor),
             // Add constraints for the content views within contentView
         ])
         
