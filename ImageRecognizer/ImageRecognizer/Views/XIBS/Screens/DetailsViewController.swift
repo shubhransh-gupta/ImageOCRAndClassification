@@ -52,7 +52,7 @@ extension DetailsViewController : UITableViewDelegate, UITableViewDataSource {
             }
             return 200
         }
-        return UITableView.automaticDimension
+        return 60
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,6 +61,10 @@ extension DetailsViewController : UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TitleTableViewCell") as! TitleTableViewCell
             cell.title.text = self.imageName
             cell.title.isUserInteractionEnabled = true
+            cell.title.delegate = self
+            cell.title.textColor = .black
+            cell.title.backgroundColor = .white
+            cell.title.layer.cornerRadius = 6
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell") as! CategoryTableViewCell
@@ -125,3 +129,9 @@ extension DetailsViewController {
     }
 }
 
+extension DetailsViewController : UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
+        self.imageName = textField.text ?? ""
+    }
+}

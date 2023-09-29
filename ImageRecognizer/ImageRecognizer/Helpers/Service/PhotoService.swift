@@ -40,6 +40,31 @@ class PhotoServices {
             }
         }
     }
+    
+    func fetchImagesWithNames(OnSuccess : @escaping (UIImage?, String?) -> ())  {
+        let fetchOptions = PHFetchOptions()
+        let assets = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+
+        for index in 0..<assets.count {
+            let asset = assets.object(at: index)
+            let imageManager = PHImageManager.default()
+
+            let requestOptions = PHImageRequestOptions()
+            requestOptions.isSynchronous = true
+
+            imageManager.requestImageDataAndOrientation(for: asset, options: requestOptions) { data, _, _, info in
+                if let data = data, let image = UIImage(data: data) {
+                    // Get the file name from the asset's local identifier
+                    let fileName = PHAssetResource.assetResources(for: asset).first?.originalFilename
+                    OnSuccess(image,fileName)
+                    // Handle the image and its associated file name
+                    
+                }
+            }
+        }
+    }
+
+
 }
 
 

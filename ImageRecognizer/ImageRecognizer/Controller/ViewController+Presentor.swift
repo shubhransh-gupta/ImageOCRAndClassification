@@ -17,7 +17,7 @@ extension ViewController {
             case .authorized:
                 // Permission granted, proceed to fetch images
                 print("Access given")
-                PhotoServices().fetchImages(OnSuccess: { images, name in
+                PhotoServices().fetchImagesWithNames(OnSuccess: { images, name in
                     if let image = images {
                         self.images.append(image)
                     }

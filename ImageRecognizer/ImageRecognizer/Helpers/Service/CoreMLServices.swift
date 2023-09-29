@@ -16,7 +16,7 @@ class CoreMLServices {
         
         // to set the minimum confidence required:
         let options = ImageLabelerOptions()
-        options.confidenceThreshold = 0.3
+        options.confidenceThreshold = 0.4
         let labeler = ImageLabeler.imageLabeler(options: options)
         labeler.process(visionImage) { labels, error in
             guard error == nil, let labels = labels else { return }

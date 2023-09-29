@@ -17,18 +17,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="326" height="86"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBV-fo-REq">
-                        <rect key="frame" x="0.0" y="0.0" width="326" height="86"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="AmA-oR-LPk">
+                        <rect key="frame" x="0.0" y="26" width="326" height="34"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="title" destination="yBV-fo-REq" id="YkS-7r-RGT"/>
+                <outlet property="title" destination="AmA-oR-LPk" id="1di-ag-njc"/>
             </connections>
             <point key="canvasLocation" x="143.5114503816794" y="34.507042253521128"/>
         </tableViewCell>

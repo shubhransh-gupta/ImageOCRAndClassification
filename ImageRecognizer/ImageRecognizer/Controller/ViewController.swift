@@ -43,6 +43,7 @@ extension ViewController {
         self.setBottomTabBar()
         scrollView.contentSize = contentView.bounds.size
         scrollView.isScrollEnabled = false
+        scrollView.delegate = self
         setUpScrollableView()
     }
     
@@ -94,4 +95,25 @@ extension ViewController : UICollectionViewDelegateFlowLayout {
         print("Shubhransh Gupta")
         return CGSize(width: cellWidth, height: cellHeight)
     }
+}
+
+extension ViewController : UIScrollViewDelegate {
+    func addChildViewControllerToScrollView() {
+        let childViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        childViewController.currentImage = self.currentImageView.image
+        childViewController.imageName = self.imageName[currentIndex ?? 0]
+        addChild(childViewController)
+        scrollView.addSubview(childViewController.view)
+        childViewController.didMove(toParent: self)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let thresholdY: CGFloat = self.view.frame.height // Adjust this threshold as needed
+
+        if scrollView.contentOffset.y > thresholdY {
+            // Add the child view controller when the user scrolls beyond the threshold
+            addChildViewControllerToScrollView()
+        }
+    }
+    
 }
