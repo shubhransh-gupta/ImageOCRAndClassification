@@ -21,11 +21,13 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.white
         tableView.register(UINib(nibName: "TitleTableViewCell", bundle: nil), forCellReuseIdentifier: "TitleTableViewCell")
         tableView.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryTableViewCell")
         tableView.register(UINib(nibName: "DescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: "DescriptionTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = .white
         tableView.estimatedRowHeight = 220
         visionServices = VisionServices()
         visionServices?.commsDelegate = self
@@ -50,7 +52,7 @@ extension DetailsViewController : UITableViewDelegate, UITableViewDataSource {
                     return 400
                 }
             }
-            return 200
+            return 160
         }
         return 60
     }
@@ -65,17 +67,24 @@ extension DetailsViewController : UITableViewDelegate, UITableViewDataSource {
             cell.title.textColor = .black
             cell.title.backgroundColor = .white
             cell.title.layer.cornerRadius = 6
+            cell.selectionStyle = .none
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell") as! CategoryTableViewCell
             cell.title.text = "Collections"
-            cell.appendValuesInStackView(value:  "\(self.currentImagesTags.first?.text ?? "")")
-            cell.appendValuesInStackView(value:  "\(self.currentImagesTags.last?.text ?? "")")
+            if let tag1 = self.currentImagesTags.first?.text {
+                cell.appendValuesInStackView(value:  "\(tag1)")
+            }
+            if let tag2 = self.currentImagesTags.last?.text {
+                cell.appendValuesInStackView(value:  "\(tag2)")
+            }
+            cell.selectionStyle = .none
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "DescriptionTableViewCell") as! DescriptionTableViewCell
             cell.title.text = "Description"
             cell.subtitle.text = self.currentOCRData
+            cell.selectionStyle = .none
             return cell
             
         default:

@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     var images : [UIImage] = []
     var currentIndex : Int? 
     var imageName : [String] = []
+    var childViewController : DetailsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,9 @@ extension ViewController {
     private func setUI() {
         self.currentImageView.image = UIImage(named: "defaultIcon")
         self.setBottomTabBar()
+        view.backgroundColor = UIColor.white
         scrollView.contentSize = contentView.bounds.size
+        scrollView.layer.cornerRadius = 10
         scrollView.isScrollEnabled = false
         scrollView.delegate = self
         setUpScrollableView()
@@ -98,22 +101,30 @@ extension ViewController : UICollectionViewDelegateFlowLayout {
 }
 
 extension ViewController : UIScrollViewDelegate {
+    
     func addChildViewControllerToScrollView() {
-        let childViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        
         childViewController.currentImage = self.currentImageView.image
         childViewController.imageName = self.imageName[currentIndex ?? 0]
-        addChild(childViewController)
-        scrollView.addSubview(childViewController.view)
-        childViewController.didMove(toParent: self)
+        present(childViewController, animated: true)
+    }
+    
+    func removeFromScrollView() {
+        dismiss(animated: true)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let thresholdY: CGFloat = self.view.frame.height // Adjust this threshold as needed
+            // Portrait orientation
+            let yOffset = scrollView.contentOffset.y
 
-        if scrollView.contentOffset.y > thresholdY {
-            // Add the child view controller when the user scrolls beyond the threshold
-            addChildViewControllerToScrollView()
-        }
+            if yOffset > 0 { // User is scrolling down
+                // Show the additional view and adjust its frame
+                addChildViewControllerToScrollView()
+            } else { // User is scrolling up
+                // Hide the additional view
+                removeFromScrollView()
+            }
     }
     
 }
