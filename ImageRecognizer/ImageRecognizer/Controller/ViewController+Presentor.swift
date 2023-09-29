@@ -17,9 +17,12 @@ extension ViewController {
             case .authorized:
                 // Permission granted, proceed to fetch images
                 print("Access given")
-                PhotoServices().fetchImages(OnSuccess: { images in
+                PhotoServices().fetchImagesWithNames(OnSuccess: { images, name in
                     if let image = images {
                         self.images.append(image)
+                    }
+                    if let name = name {
+                        self.imageName.append(name)
                     }
                     OnSuccess()
                 })
@@ -61,7 +64,7 @@ extension ViewController {
             tab1.logoImage.image = UIImage(systemName: "square.and.arrow.up")
             tab1.logoImage.tintColor = UIColor.systemBlue // Set the tint color
             tab1.logoImage.contentMode = .scaleAspectFit // Adjust content mode for sizing
-            tab1.logoImage.frame.size = CGSize(width: 35, height: 40)
+            tab1.logoImage.frame.size = CGSize(width: 30, height: 30)
             tab1.labelName.text = "Share"
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(sharePic(_:)))
             tapGesture.numberOfTapsRequired = 1
@@ -74,7 +77,7 @@ extension ViewController {
             tab2.logoImage.image = UIImage(systemName: "info.circle")
             tab2.logoImage.tintColor = UIColor.systemBlue // Set the tint color
             tab2.logoImage.contentMode = .scaleAspectFit // Adjust content mode for sizing
-            tab2.logoImage.frame.size = CGSize(width: 35, height: 40)
+            tab2.logoImage.frame.size = CGSize(width: 30, height: 30)
             tab2.labelName.text = "Info"
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(infoButtonPressed(_:)))
             tapGesture.numberOfTapsRequired = 1
@@ -87,7 +90,7 @@ extension ViewController {
             tab3.logoImage.image = UIImage(systemName: "bin.xmark.fill")
             tab3.logoImage.tintColor = UIColor.systemBlue // Set the tint color
             tab3.logoImage.contentMode = .scaleAspectFit // Adjust content mode for sizing
-            tab3.logoImage.frame.size = CGSize(width: 35, height: 40)
+            tab3.logoImage.frame.size = CGSize(width: 30, height: 30)
             tab3.labelName.text = "Delete"
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(deletePic(_:)))
             tapGesture.numberOfTapsRequired = 1
@@ -127,7 +130,10 @@ extension ViewController {
     }
     
     @objc func infoButtonPressed(_ sender: UITapGestureRecognizer) {
-        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        vc.currentImage = self.currentImageView.image
+        vc.imageName = self.imageName[currentIndex ?? 0]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
@@ -135,6 +141,26 @@ extension ViewController {
 extension ViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        scrollView.contentSize = CGSize(width: self.view.frame.size.height, height: self.view.bounds.size.height)
+    
+        if UIDevice.current.orientation.isPortrait {
+            // Portrait orientation
+            scrollView.isScrollEnabled = false
+        } else {
+            // Landscape orientation
+            scrollView.isScrollEnabled = true
+            centerViewsInLandscape()
+        }
+//        self.setUpScrollableView()
     }
+    
+    func centerViewsInLandscape() {
+        // Center containerView horizontally and vertically
+        contentView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        contentView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    
+        // Center subView within containerView horizontally and vertically
+        currentImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        currentImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+    }
+
 }

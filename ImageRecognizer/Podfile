@@ -1,0 +1,8 @@
+platform :ios, '15.0'
+
+target 'ImageRecognizer'  do
+  use_frameworks!
+
+  # Add your pods here
+  pod 'GoogleMLKit/ImageLabeling', '3.2.0'
+end

@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     
     var images : [UIImage] = []
     var currentIndex : Int? 
+    var imageName : [String] = []
+    var childViewController : DetailsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +42,11 @@ extension ViewController {
     private func setUI() {
         self.currentImageView.image = UIImage(named: "defaultIcon")
         self.setBottomTabBar()
+        view.backgroundColor = UIColor.white
         scrollView.contentSize = contentView.bounds.size
-        scrollView.contentSize = CGSize(width: contentView.bounds.size.width, height: contentView.bounds.size.height)
+        scrollView.layer.cornerRadius = 10
+        scrollView.isScrollEnabled = false
+        scrollView.delegate = self
         setUpScrollableView()
     }
     
@@ -50,16 +55,16 @@ extension ViewController {
         scrollView.maximumZoomScale = 1.0
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            contentView.topAnchor.constraint(equalTo: view.topAnchor),
+            contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            contentView.widthAnchor.constraint(equalTo: view.widthAnchor),
             // Add constraints for the content views within contentView
         ])
         
@@ -93,4 +98,33 @@ extension ViewController : UICollectionViewDelegateFlowLayout {
         print("Shubhransh Gupta")
         return CGSize(width: cellWidth, height: cellHeight)
     }
+}
+
+extension ViewController : UIScrollViewDelegate {
+    
+    func addChildViewControllerToScrollView() {
+        
+        childViewController.currentImage = self.currentImageView.image
+        childViewController.imageName = self.imageName[currentIndex ?? 0]
+        present(childViewController, animated: true)
+    }
+    
+    func removeFromScrollView() {
+        dismiss(animated: true)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let thresholdY: CGFloat = self.view.frame.height // Adjust this threshold as needed
+            // Portrait orientation
+            let yOffset = scrollView.contentOffset.y
+
+            if yOffset > 0 { // User is scrolling down
+                // Show the additional view and adjust its frame
+                addChildViewControllerToScrollView()
+            } else { // User is scrolling up
+                // Hide the additional view
+                removeFromScrollView()
+            }
+    }
+    
 }
