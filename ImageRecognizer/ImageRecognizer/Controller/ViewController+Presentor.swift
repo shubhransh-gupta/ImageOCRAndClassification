@@ -17,9 +17,12 @@ extension ViewController {
             case .authorized:
                 // Permission granted, proceed to fetch images
                 print("Access given")
-                PhotoServices().fetchImages(OnSuccess: { images in
+                PhotoServices().fetchImages(OnSuccess: { images, name in
                     if let image = images {
                         self.images.append(image)
+                    }
+                    if let name = name {
+                        self.imageName.append(name)
                     }
                     OnSuccess()
                 })
@@ -127,7 +130,10 @@ extension ViewController {
     }
     
     @objc func infoButtonPressed(_ sender: UITapGestureRecognizer) {
-        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        vc.currentImage = self.currentImageView.image
+        vc.imageName = self.imageName[currentIndex ?? 0]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

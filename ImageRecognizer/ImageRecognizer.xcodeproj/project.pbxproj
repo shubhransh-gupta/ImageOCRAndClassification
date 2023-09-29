@@ -121,7 +121,6 @@
 				9ADA4D4DEF1259D1EFC06E66 /* Pods-ImageRecognizer.debug.xcconfig */,
 				53D296946F4C0B85C0369179 /* Pods-ImageRecognizer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -190,18 +189,18 @@
 			isa = PBXGroup;
 			children = (
 				2E38E3A52AC582CF00495790 /* XIBS */,
-				2E38E3A42AC582B400495790 /* Stroryboards */,
+				2E38E3A42AC582B400495790 /* Storyboards */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		2E38E3A42AC582B400495790 /* Stroryboards */ = {
+		2E38E3A42AC582B400495790 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				2E38E37C2AC57DEC00495790 /* LaunchScreen.storyboard */,
 				2E38E3742AC57DEB00495790 /* Main.storyboard */,
 			);
-			path = Stroryboards;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		2E38E3A52AC582CF00495790 /* XIBS */ = {

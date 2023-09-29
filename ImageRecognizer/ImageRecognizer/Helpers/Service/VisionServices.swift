@@ -12,6 +12,7 @@ class VisionServices {
     weak var commsDelegate : DataTransferDelegate?
     
     func performOCR(_ image: UIImage) {
+        var localResult = ""
         let textRecognitionRequest = VNRecognizeTextRequest { request, error in
             if let error = error {
                 print("OCR Error: \(error.localizedDescription)")
@@ -26,11 +27,10 @@ class VisionServices {
                 if let recognizedText = observation.topCandidates(1).first?.string {
                     // Extracted text from OCR
                     print("OCR Text: \(recognizedText)")
-                    
-                    // Update your app's data model with the extracted text
-                    self.updateDataModelWithOCRText(recognizedText)
+                    localResult += recognizedText
                 }
             }
+            self.updateDataModelWithOCRText(localResult)
         }
         
         let requestHandler = VNImageRequestHandler(cgImage: image.cgImage!, orientation: .up)

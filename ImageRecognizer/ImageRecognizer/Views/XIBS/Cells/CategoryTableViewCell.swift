@@ -14,7 +14,12 @@ class CategoryTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.stackView.spacing = 4 // Set the spacing between views
+        self.stackView.alpha = 1
+        self.stackView.axis = .horizontal
+        self.stackView.alignment = .fill
+        self.stackView.distribution = .fillEqually
+ 
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -23,4 +28,17 @@ class CategoryTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func editCTA(_ sender: Any) {
+        
+    }
+    
+    func appendValuesInStackView(value : String) {
+        let tab = UILabel()
+        tab.text = value
+        tab.textColor = .gray
+        tab.textAlignment = .center
+        tab.backgroundColor = .systemYellow
+        tab.layer.cornerRadius = 6
+        self.stackView.addArrangedSubview(tab)
+    }
 }

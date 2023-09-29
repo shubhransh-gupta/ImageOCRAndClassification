@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     
     var images : [UIImage] = []
     var currentIndex : Int? 
+    var imageName : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

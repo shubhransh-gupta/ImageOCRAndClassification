@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CNn-kx-q6v">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="DBq-Ah-cuZ">
-                                <rect key="frame" x="-1" y="47" width="393" height="758"/>
+                                <rect key="frame" x="0.0" y="47" width="393" height="758"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zr3-iW-t3F">
@@ -44,8 +44,8 @@
                                                 <color key="backgroundColor" name="AccentColor"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="Oh6-EU-IUW">
-                                                <rect key="frame" x="19" y="722" width="393" height="63"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                                <rect key="frame" x="19" y="648" width="393" height="74"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                             </stackView>
                                         </subviews>
@@ -59,6 +59,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ytM-GS-RVL"/>
                     <connections>
                         <outlet property="bottomBar" destination="Oh6-EU-IUW" id="vLS-JG-n0n"/>
                         <outlet property="contentView" destination="Zr3-iW-t3F" id="7Z4-cS-zMQ"/>
@@ -69,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106.10687022900763" y="2.1126760563380285"/>
+            <point key="canvasLocation" x="1032.824427480916" y="2.1126760563380285"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="11b-w1-k78">
@@ -86,7 +87,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Bu-ow-lzw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="TP8-6f-MSd" id="btU-eV-w8E"/>
@@ -94,7 +95,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlb-uW-aEb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1185.4961832061069" y="8.4507042253521139"/>
+            <point key="canvasLocation" x="2112.2137404580153" y="8.4507042253521139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fPg-9e-0Cf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CNn-kx-q6v" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OIV-Lv-p9I">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Oop-AY-SyC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UsW-wV-k2i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="106.10687022900763" y="2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
