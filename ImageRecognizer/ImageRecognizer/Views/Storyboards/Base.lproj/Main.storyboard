@@ -44,8 +44,8 @@
                                                 <color key="backgroundColor" name="AccentColor"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="Oh6-EU-IUW">
-                                                <rect key="frame" x="19" y="648" width="393" height="74"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <rect key="frame" x="19" y="666" width="393" height="56"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                             </stackView>
                                         </subviews>

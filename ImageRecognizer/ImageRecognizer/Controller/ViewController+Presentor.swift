@@ -64,7 +64,7 @@ extension ViewController {
             tab1.logoImage.image = UIImage(systemName: "square.and.arrow.up")
             tab1.logoImage.tintColor = UIColor.systemBlue // Set the tint color
             tab1.logoImage.contentMode = .scaleAspectFit // Adjust content mode for sizing
-            tab1.logoImage.frame.size = CGSize(width: 35, height: 40)
+            tab1.logoImage.frame.size = CGSize(width: 30, height: 30)
             tab1.labelName.text = "Share"
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(sharePic(_:)))
             tapGesture.numberOfTapsRequired = 1
@@ -77,7 +77,7 @@ extension ViewController {
             tab2.logoImage.image = UIImage(systemName: "info.circle")
             tab2.logoImage.tintColor = UIColor.systemBlue // Set the tint color
             tab2.logoImage.contentMode = .scaleAspectFit // Adjust content mode for sizing
-            tab2.logoImage.frame.size = CGSize(width: 35, height: 40)
+            tab2.logoImage.frame.size = CGSize(width: 30, height: 30)
             tab2.labelName.text = "Info"
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(infoButtonPressed(_:)))
             tapGesture.numberOfTapsRequired = 1
@@ -90,7 +90,7 @@ extension ViewController {
             tab3.logoImage.image = UIImage(systemName: "bin.xmark.fill")
             tab3.logoImage.tintColor = UIColor.systemBlue // Set the tint color
             tab3.logoImage.contentMode = .scaleAspectFit // Adjust content mode for sizing
-            tab3.logoImage.frame.size = CGSize(width: 35, height: 40)
+            tab3.logoImage.frame.size = CGSize(width: 30, height: 30)
             tab3.labelName.text = "Delete"
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(deletePic(_:)))
             tapGesture.numberOfTapsRequired = 1
