@@ -190,7 +190,13 @@ extension ViewController {
             current = self.currentIndex! + 1
             indexToEvict = 2
         }
-        self.photoManager.fetchNextPreviewImageToDisplay(imageIndex: current, evictionIndex: indexToEvict)
+        if let image = self.photoManager.previewRealImages[current] {
+            DispatchQueue.main.async { [weak self] in
+                self?.currentImageView.image = image
+            }
+        } else {
+            self.photoManager.fetchNextPreviewImageToDisplay(imageIndex: current, evictionIndex: indexToEvict)
+        }
     }
     
     func fetchPreviewImagesForAnyIndexClicked(index : Int) {
@@ -203,11 +209,17 @@ extension ViewController {
             start = index - 1
             end = index + 1
         }
-        self.photoManager.fetchPreviewImagesWithNames(startIndex: start, endIndex: end, OnSuccess: { photos, infoArray in
+        if let image = self.photoManager.previewRealImages[index] {
             DispatchQueue.main.async { [weak self] in
-                self?.currentImageView.image = self?.photoManager.previewRealImages[index]
-                self?.imageName = infoArray
+                self?.currentImageView.image = image
             }
-        })
+        } else {
+            self.photoManager.fetchPreviewImagesWithNames(startIndex: start, endIndex: end, OnSuccess: { photos, infoArray in
+                DispatchQueue.main.async { [weak self] in
+                    self?.currentImageView.image = self?.photoManager.previewRealImages[index]
+                    self?.imageName = infoArray
+                }
+            })
+        }
     }
 }

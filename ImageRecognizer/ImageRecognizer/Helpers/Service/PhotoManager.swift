@@ -12,7 +12,7 @@ class PhotoManager {
     
     var allPHAssets : [PHAsset] = []
     var fetchedThumbnailImages: [UIImage] = []
-    var previewRealImages : [UIImage] = [UIImage](repeating: UIImage(), count: 10)
+    var previewRealImages : [UIImage?] = [UIImage?](repeating: nil, count: 10)
     var realImageInfo : [String] = [String](repeating: "", count: 10)
     
     weak var dataDelegate : PhotosDataTransferComunicationaDelegate?
@@ -70,11 +70,14 @@ class PhotoManager {
 //extension for fetching original Images
 extension PhotoManager {
     
-    func fetchPreviewImagesWithNames(startIndex : Int, endIndex : Int,OnSuccess : @escaping ([UIImage], [String]) -> ())  {
+    func fetchPreviewImagesWithNames(startIndex : Int, endIndex : Int,OnSuccess : @escaping ([UIImage?], [String]) -> ())  {
         guard endIndex < self.allPHAssets.count, startIndex >= 0 else {
             print("processing out of scope images")
             return
         }
+        
+//        self.previewRealImages.removeAll()
+//        self.realImageInfo.removeAll()
         
         for index in startIndex...endIndex {
             let asset = self.allPHAssets[index]
@@ -120,11 +123,9 @@ extension PhotoManager {
                 let id = PHAssetResource.assetResources(for: asset).first?.assetLocalIdentifier
                 self.previewRealImages.append(image)
                 self.realImageInfo.append(id ?? "")
-                
-                if self.previewRealImages.count == 3 {
-                    if let del = self.dataDelegate {
-                        del.didReceiveOriginalImage(image: image, imageInfo : id ?? "")
-                    }
+               
+                if let del = self.dataDelegate {
+                    del.didReceiveOriginalImage(image: image, imageInfo : id ?? "")
                 }
                 
             }

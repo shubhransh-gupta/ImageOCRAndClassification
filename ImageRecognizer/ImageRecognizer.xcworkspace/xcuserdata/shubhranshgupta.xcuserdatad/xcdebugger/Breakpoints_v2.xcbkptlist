@@ -30,8 +30,8 @@
             filePath = "ImageRecognizer/Controller/ViewController+Presentor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "fetchPreviewImagesForAnyIndexClicked(index:)"
             landmarkType = "7">
             <Locations>
@@ -51,11 +51,11 @@
                   offsetFromSymbolStart = "184">
                </Location>
                <Location
-                  uuid = "3B91514C-6543-48F0-AB47-A57684DE1ABA - a0c19c9b5a926d9e"
+                  uuid = "3B91514C-6543-48F0-AB47-A57684DE1ABA - 8d71bd1f19132e02"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;__C.UIImage&gt;, Swift.Array&lt;Swift.String&gt;) -&gt; () in ImageRecognizer.ViewController.fetchPreviewImagesForAnyIndexClicked(index: Swift.Int) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Array&lt;Swift.Optional&lt;__C.UIImage&gt;&gt;, Swift.Array&lt;Swift.String&gt;) -&gt; () in ImageRecognizer.ViewController.fetchPreviewImagesForAnyIndexClicked(index: Swift.Int) -&gt; ()"
                   moduleName = "ImageRecognizer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shubhranshgupta/Desktop/aaa/ImageRecognizer/ImageRecognizer/Controller/ViewController+Presentor.swift"
@@ -78,8 +78,8 @@
             filePath = "ImageRecognizer/Helpers/Service/PhotoManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "fetchPreviewImagesWithNames(startIndex:endIndex:OnSuccess:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,39 +110,39 @@
             filePath = "ImageRecognizer/Helpers/Service/PhotoManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "fetchPreviewImagesWithNames(startIndex:endIndex:OnSuccess:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "AF8EB970-5CF9-4A6C-B1AB-26F1D7B25CE0 - 677e8361d9e8bb43"
+                  uuid = "AF8EB970-5CF9-4A6C-B1AB-26F1D7B25CE0 - d76654fff2be7287"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ImageRecognizer.PhotoManager.fetchPreviewImagesWithNames(startIndex: Swift.Int, endIndex: Swift.Int, OnSuccess: (Swift.Array&lt;__C.UIImage&gt;, Swift.Array&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "ImageRecognizer.PhotoManager.fetchPreviewImagesWithNames(startIndex: Swift.Int, endIndex: Swift.Int, OnSuccess: (Swift.Array&lt;Swift.Optional&lt;__C.UIImage&gt;&gt;, Swift.Array&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "ImageRecognizer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shubhranshgupta/Desktop/aaa/ImageRecognizer/ImageRecognizer/Helpers/Service/PhotoManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "680">
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "880">
                </Location>
                <Location
-                  uuid = "AF8EB970-5CF9-4A6C-B1AB-26F1D7B25CE0 - 7913eccb75484b4e"
+                  uuid = "AF8EB970-5CF9-4A6C-B1AB-26F1D7B25CE0 - 2e709d46a5e81f48"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.String&gt;, __C.CGImagePropertyOrientation, Swift.Optional&lt;Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;&gt;) -&gt; () in ImageRecognizer.PhotoManager.fetchPreviewImagesWithNames(startIndex: Swift.Int, endIndex: Swift.Int, OnSuccess: (Swift.Array&lt;__C.UIImage&gt;, Swift.Array&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.String&gt;, __C.CGImagePropertyOrientation, Swift.Optional&lt;Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;&gt;) -&gt; () in ImageRecognizer.PhotoManager.fetchPreviewImagesWithNames(startIndex: Swift.Int, endIndex: Swift.Int, OnSuccess: (Swift.Array&lt;Swift.Optional&lt;__C.UIImage&gt;&gt;, Swift.Array&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "ImageRecognizer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shubhranshgupta/Desktop/aaa/ImageRecognizer/ImageRecognizer/Helpers/Service/PhotoManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
                   offsetFromSymbolStart = "180">
                </Location>
             </Locations>
@@ -158,42 +158,106 @@
             filePath = "ImageRecognizer/Helpers/Service/PhotoManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "fetchPreviewImagesWithNames(startIndex:endIndex:OnSuccess:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "CD455EBE-B03E-4ACD-99D8-33CB90644D05 - 7913eccb75484b8c"
+                  uuid = "CD455EBE-B03E-4ACD-99D8-33CB90644D05 - 2e709d46a5e81e86"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.String&gt;, __C.CGImagePropertyOrientation, Swift.Optional&lt;Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;&gt;) -&gt; () in ImageRecognizer.PhotoManager.fetchPreviewImagesWithNames(startIndex: Swift.Int, endIndex: Swift.Int, OnSuccess: (Swift.Array&lt;__C.UIImage&gt;, Swift.Array&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.String&gt;, __C.CGImagePropertyOrientation, Swift.Optional&lt;Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;&gt;) -&gt; () in ImageRecognizer.PhotoManager.fetchPreviewImagesWithNames(startIndex: Swift.Int, endIndex: Swift.Int, OnSuccess: (Swift.Array&lt;Swift.Optional&lt;__C.UIImage&gt;&gt;, Swift.Array&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "ImageRecognizer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shubhranshgupta/Desktop/aaa/ImageRecognizer/ImageRecognizer/Helpers/Service/PhotoManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
                   offsetFromSymbolStart = "348">
                </Location>
                <Location
-                  uuid = "CD455EBE-B03E-4ACD-99D8-33CB90644D05 - 7913eccb75484b8c"
+                  uuid = "CD455EBE-B03E-4ACD-99D8-33CB90644D05 - 2e709d46a5e81e86"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.String&gt;, __C.CGImagePropertyOrientation, Swift.Optional&lt;Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;&gt;) -&gt; () in ImageRecognizer.PhotoManager.fetchPreviewImagesWithNames(startIndex: Swift.Int, endIndex: Swift.Int, OnSuccess: (Swift.Array&lt;__C.UIImage&gt;, Swift.Array&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.String&gt;, __C.CGImagePropertyOrientation, Swift.Optional&lt;Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;&gt;) -&gt; () in ImageRecognizer.PhotoManager.fetchPreviewImagesWithNames(startIndex: Swift.Int, endIndex: Swift.Int, OnSuccess: (Swift.Array&lt;Swift.Optional&lt;__C.UIImage&gt;&gt;, Swift.Array&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "ImageRecognizer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shubhranshgupta/Desktop/aaa/ImageRecognizer/ImageRecognizer/Helpers/Service/PhotoManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
                   offsetFromSymbolStart = "532">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D56154C-0F69-49B0-B39A-A21FAE0D7A98"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageRecognizer/Controller/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "handleSwipe(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "496F65C6-0DD8-42BD-AA3A-9B620C29EEB8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageRecognizer/Controller/ViewController+Presentor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
+            landmarkName = "fetchPreviewImages(isLeftSwipe:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "675FBC12-9BE0-4300-96F4-20EDC353F01C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageRecognizer/Helpers/Service/PhotoManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "fetchNextPreviewImageToDisplay(imageIndex:evictionIndex:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE7E8438-26EC-44C8-B63B-0A6DD83CF60E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageRecognizer/Controller/ViewController+Presentor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "fetchPreviewImages(isLeftSwipe:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
