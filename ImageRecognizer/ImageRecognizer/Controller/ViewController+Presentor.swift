@@ -17,16 +17,8 @@ extension ViewController {
             case .authorized:
                 // Permission granted, proceed to fetch images
                 print("Access given")
-                PhotoServices().fetchImagesWithNames(OnSuccess: { images, name in
-                    if let image = images {
-                        self.images.append(image)
-                    }
-                    if let name = name {
-                        self.imageName.append(name)
-                    }
-                    OnSuccess()
-                })
-                
+                self.fetchDataFromPhotoService()
+                OnSuccess()
             case .denied, .restricted:
                 // Permission denied, handle accordingly
                 print("Access to photos is denied or restricted.")
@@ -41,6 +33,10 @@ extension ViewController {
                 break
             }
         }
+    }
+    
+    func fetchDataFromPhotoService() {
+        self.photoManager.processBatchRequestForPHAssets()
     }
     
     func fetchImageFromPhotos() {
@@ -163,4 +159,55 @@ extension ViewController {
         currentImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
     }
 
+}
+
+
+extension ViewController : PhotosDataTransferComunicationaDelegate {
+    
+    func didReceiveOriginalImage(image: UIImage, imageInfo: String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.currentImageView.image = self?.photoManager.previewRealImages[self?.currentIndex ?? 0]
+            self?.imageName[self?.currentIndex ?? 0] = imageInfo
+        }
+    }
+    
+    func didReceiveThumbnails(photos: [UIImage]) {
+        self.images = photos
+        DispatchQueue.main.async { [weak self] in
+            self?.previewCollectionView.reloadData()
+        }
+    }
+}
+
+extension ViewController {
+    func fetchPreviewImages(isLeftSwipe : Bool) {
+        var current = 0
+        var indexToEvict = 0
+        if isLeftSwipe {
+            current = self.currentIndex == 0 ? self.currentIndex! : self.currentIndex! - 1
+            indexToEvict = 0
+        } else {
+            current = self.currentIndex! + 1
+            indexToEvict = 2
+        }
+        self.photoManager.fetchNextPreviewImageToDisplay(imageIndex: current, evictionIndex: indexToEvict)
+    }
+    
+    func fetchPreviewImagesForAnyIndexClicked(index : Int) {
+        var start = 0
+        var end = 0
+        if index == 0 {
+            start = 0
+            end = index + 1
+        } else {
+            start = index - 1
+            end = index + 1
+        }
+        self.photoManager.fetchPreviewImagesWithNames(startIndex: start, endIndex: end, OnSuccess: { photos, infoArray in
+            DispatchQueue.main.async { [weak self] in
+                self?.currentImageView.image = self?.photoManager.previewRealImages[index]
+                self?.imageName = infoArray
+            }
+        })
+    }
 }
