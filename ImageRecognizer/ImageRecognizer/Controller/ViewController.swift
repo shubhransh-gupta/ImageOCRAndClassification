@@ -19,13 +19,15 @@ class ViewController: UIViewController {
     var currentIndex : Int? 
     var imageName : [String] = []
     var childViewController : DetailsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+    let photoManager = PhotoManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUI()
+        self.photoManager.dataDelegate = self
+        addGestureOnImageView()
         self.fetchImageFromPhotos()
         self.registerCollectionView()
-        // Do any additional setup after loading the view.
     }
 
 
@@ -48,6 +50,16 @@ extension ViewController {
         scrollView.isScrollEnabled = false
         scrollView.delegate = self
         setUpScrollableView()
+    }
+    
+    func addGestureOnImageView() {
+        let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeLeftGesture.direction = .left
+        currentImageView.addGestureRecognizer(swipeLeftGesture)
+        let swipeRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeRightGesture.direction = .right
+        currentImageView.addGestureRecognizer(swipeRightGesture)
+        currentImageView.isUserInteractionEnabled = true
     }
     
     func setUpScrollableView() {
@@ -84,10 +96,13 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         currentIndex = indexPath.item
-        currentImageView.image = images[indexPath.item]
+        self.fetchPreviewImagesForAnyIndexClicked(index: currentIndex ?? 0)
     }
 
-
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        self.photoManager.fetchThumbnailsForSlidingWindow(slidingWindowLength: 10, startingIndex : indexPath.row)
+    }
+    
 }
 
 extension ViewController : UICollectionViewDelegateFlowLayout {
@@ -125,6 +140,20 @@ extension ViewController : UIScrollViewDelegate {
                 // Hide the additional view
                 removeFromScrollView()
             }
+    }
+    
+    @objc func handleSwipe(_ gesture: UISwipeGestureRecognizer) {
+        if gesture.direction == .left {
+            // Handle the left swipe
+            if self.currentIndex != 0 {
+                self.currentIndex! -= 1
+                self.fetchPreviewImages(isLeftSwipe: true)
+            }
+        } else if gesture.direction == .right {
+            // Handle the right swipe
+            self.currentIndex! += 1
+            self.fetchPreviewImages(isLeftSwipe: false)
+        }
     }
     
 }

@@ -3,4 +3,262 @@
    uuid = "74F39742-EB39-464A-968B-24C5A6336AB2"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FDD5F49F-8C2F-49C3-9C35-06958C1A6B31"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageRecognizer/Controller/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3B91514C-6543-48F0-AB47-A57684DE1ABA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageRecognizer/Controller/ViewController+Presentor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "fetchPreviewImagesForAnyIndexClicked(index:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3B91514C-6543-48F0-AB47-A57684DE1ABA - 6143f9b5ea769a90"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ImageRecognizer.ViewController.fetchPreviewImagesForAnyIndexClicked(index: Swift.Int) -&gt; ()"
+                  moduleName = "ImageRecognizer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhranshgupta/Desktop/aaa/ImageRecognizer/ImageRecognizer/Controller/ViewController+Presentor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "206"
+                  endingLineNumber = "206"
+                  offsetFromSymbolStart = "184">
+               </Location>
+               <Location
+                  uuid = "3B91514C-6543-48F0-AB47-A57684DE1ABA - 8d71bd1f19132e02"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Swift.Optional&lt;__C.UIImage&gt;&gt;, Swift.Array&lt;Swift.String&gt;) -&gt; () in ImageRecognizer.ViewController.fetchPreviewImagesForAnyIndexClicked(index: Swift.Int) -&gt; ()"
+                  moduleName = "ImageRecognizer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhranshgupta/Desktop/aaa/ImageRecognizer/ImageRecognizer/Controller/ViewController+Presentor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "207"
+                  endingLineNumber = "207"
+                  offsetFromSymbolStart = "240">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3C6A7C4-42E1-40AF-A74E-AC15A6BDEE61"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageRecognizer/Helpers/Service/PhotoManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "fetchPreviewImagesWithNames(startIndex:endIndex:OnSuccess:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A5380E5C-518E-4D52-8E3E-1E6426FDA79D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageRecognizer/Helpers/Service/PhotoManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "fetchPreviewImagesWithNames(startIndex:endIndex:OnSuccess:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AF8EB970-5CF9-4A6C-B1AB-26F1D7B25CE0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageRecognizer/Helpers/Service/PhotoManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "fetchPreviewImagesWithNames(startIndex:endIndex:OnSuccess:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AF8EB970-5CF9-4A6C-B1AB-26F1D7B25CE0 - d76654fff2be7287"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ImageRecognizer.PhotoManager.fetchPreviewImagesWithNames(startIndex: Swift.Int, endIndex: Swift.Int, OnSuccess: (Swift.Array&lt;Swift.Optional&lt;__C.UIImage&gt;&gt;, Swift.Array&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ImageRecognizer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhranshgupta/Desktop/aaa/ImageRecognizer/ImageRecognizer/Helpers/Service/PhotoManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "880">
+               </Location>
+               <Location
+                  uuid = "AF8EB970-5CF9-4A6C-B1AB-26F1D7B25CE0 - 2e709d46a5e81f48"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.String&gt;, __C.CGImagePropertyOrientation, Swift.Optional&lt;Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;&gt;) -&gt; () in ImageRecognizer.PhotoManager.fetchPreviewImagesWithNames(startIndex: Swift.Int, endIndex: Swift.Int, OnSuccess: (Swift.Array&lt;Swift.Optional&lt;__C.UIImage&gt;&gt;, Swift.Array&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ImageRecognizer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhranshgupta/Desktop/aaa/ImageRecognizer/ImageRecognizer/Helpers/Service/PhotoManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "180">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD455EBE-B03E-4ACD-99D8-33CB90644D05"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageRecognizer/Helpers/Service/PhotoManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "fetchPreviewImagesWithNames(startIndex:endIndex:OnSuccess:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CD455EBE-B03E-4ACD-99D8-33CB90644D05 - 2e709d46a5e81e86"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.String&gt;, __C.CGImagePropertyOrientation, Swift.Optional&lt;Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;&gt;) -&gt; () in ImageRecognizer.PhotoManager.fetchPreviewImagesWithNames(startIndex: Swift.Int, endIndex: Swift.Int, OnSuccess: (Swift.Array&lt;Swift.Optional&lt;__C.UIImage&gt;&gt;, Swift.Array&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ImageRecognizer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhranshgupta/Desktop/aaa/ImageRecognizer/ImageRecognizer/Helpers/Service/PhotoManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "348">
+               </Location>
+               <Location
+                  uuid = "CD455EBE-B03E-4ACD-99D8-33CB90644D05 - 2e709d46a5e81e86"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;Swift.String&gt;, __C.CGImagePropertyOrientation, Swift.Optional&lt;Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;&gt;) -&gt; () in ImageRecognizer.PhotoManager.fetchPreviewImagesWithNames(startIndex: Swift.Int, endIndex: Swift.Int, OnSuccess: (Swift.Array&lt;Swift.Optional&lt;__C.UIImage&gt;&gt;, Swift.Array&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ImageRecognizer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shubhranshgupta/Desktop/aaa/ImageRecognizer/ImageRecognizer/Helpers/Service/PhotoManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "532">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D56154C-0F69-49B0-B39A-A21FAE0D7A98"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageRecognizer/Controller/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "handleSwipe(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "496F65C6-0DD8-42BD-AA3A-9B620C29EEB8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageRecognizer/Controller/ViewController+Presentor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
+            landmarkName = "fetchPreviewImages(isLeftSwipe:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "675FBC12-9BE0-4300-96F4-20EDC353F01C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageRecognizer/Helpers/Service/PhotoManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "fetchNextPreviewImageToDisplay(imageIndex:evictionIndex:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE7E8438-26EC-44C8-B63B-0A6DD83CF60E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ImageRecognizer/Controller/ViewController+Presentor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "fetchPreviewImages(isLeftSwipe:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

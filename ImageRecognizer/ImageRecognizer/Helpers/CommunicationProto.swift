@@ -6,7 +6,16 @@
 //
 
 import Foundation
+import UIKit
 
 protocol DataTransferDelegate : AnyObject {
     func didReceiveData(data : String)
 }
+
+protocol PhotosDataTransferComunicationaDelegate : AnyObject {
+    func didReceiveThumbnails(photos : [UIImage])
+    func didReceiveOriginalImage(image : UIImage, imageInfo : String)
+}
+
+
+
