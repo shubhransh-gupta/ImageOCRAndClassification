@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     var imageName : [String] = []
     var childViewController : DetailsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
     let photoManager = PhotoManager()
+    var startIndex = 0
+    var windowSize = 11
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,9 +100,11 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate 
         currentIndex = indexPath.item
         self.fetchPreviewImagesForAnyIndexClicked(index: currentIndex ?? 0)
     }
-
-    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        self.photoManager.fetchThumbnailsForSlidingWindow(slidingWindowLength: 10, startingIndex : indexPath.row)
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.item == self.images.count - 1 {
+            self.photoManager.fetchThumbnailsForSlidingWindow(slidingWindowLength: windowSize, startingIndex : indexPath.item)
+        }
     }
     
 }

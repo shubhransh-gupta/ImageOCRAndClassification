@@ -190,7 +190,7 @@ extension ViewController {
             current = self.currentIndex! + 1
             indexToEvict = 2
         }
-        if let image = self.photoManager.previewRealImages[current] {
+        if current < self.photoManager.previewRealImages.count, let image = self.photoManager.previewRealImages[current] {
             DispatchQueue.main.async { [weak self] in
                 self?.currentImageView.image = image
             }
@@ -209,17 +209,25 @@ extension ViewController {
             start = index - 1
             end = index + 1
         }
-        if let image = self.photoManager.previewRealImages[index] {
-            DispatchQueue.main.async { [weak self] in
-                self?.currentImageView.image = image
+        if index < self.photoManager.previewRealImages.count {
+            if let image = self.photoManager.previewRealImages[index] {
+                DispatchQueue.main.async { [weak self] in
+                    self?.currentImageView.image = image
+                }
+            } else {
+                self.fetchRealImage(start: start, end: end, index: index)
             }
         } else {
-            self.photoManager.fetchPreviewImagesWithNames(startIndex: start, endIndex: end, OnSuccess: { photos, infoArray in
-                DispatchQueue.main.async { [weak self] in
-                    self?.currentImageView.image = self?.photoManager.previewRealImages[index]
-                    self?.imageName = infoArray
-                }
-            })
+            self.fetchRealImage(start: start, end: end,  index: index)
         }
+    }
+    
+    func fetchRealImage(start : Int, end : Int, index : Int) {
+        self.photoManager.fetchPreviewImagesWithNames(startIndex: start, endIndex: end, OnSuccess: { photos, infoArray in
+            DispatchQueue.main.async { [weak self] in
+                self?.currentImageView.image = self?.photoManager.previewRealImages[index]
+                self?.imageName = infoArray
+            }
+        })
     }
 }

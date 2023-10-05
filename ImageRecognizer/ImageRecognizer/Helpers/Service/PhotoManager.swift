@@ -42,6 +42,11 @@ class PhotoManager {
     func fetchThumbnailsForSlidingWindow(slidingWindowLength : Int, startingIndex : Int) {
         let maxAssetsToFetch = min(self.allPHAssets.count, slidingWindowLength + startingIndex) // Ensure we don't go beyond the array size
         
+        guard startingIndex < maxAssetsToFetch else {
+            print("image assets are over")
+            return
+        }
+        
         for index in startingIndex..<maxAssetsToFetch {
             let asset = self.allPHAssets[index]
             
@@ -51,7 +56,7 @@ class PhotoManager {
                     self.fetchedThumbnailImages.append(thumbnailImage)
                     
                     // Check if all images have been fetched
-                    if self.fetchedThumbnailImages.count == maxAssetsToFetch {
+                    if self.fetchedThumbnailImages.count == maxAssetsToFetch - 1 {
                         // All images have been fetched
                         if let del = self.dataDelegate {
                             del.didReceiveThumbnails(photos: self.fetchedThumbnailImages)
