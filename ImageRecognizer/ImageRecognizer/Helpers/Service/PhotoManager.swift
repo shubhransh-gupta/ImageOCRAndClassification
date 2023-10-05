@@ -56,7 +56,7 @@ class PhotoManager {
                     self.fetchedThumbnailImages.append(thumbnailImage)
                     
                     // Check if all images have been fetched
-                    if self.fetchedThumbnailImages.count == maxAssetsToFetch - 1 {
+                    if self.fetchedThumbnailImages.count == maxAssetsToFetch {
                         // All images have been fetched
                         if let del = self.dataDelegate {
                             del.didReceiveThumbnails(photos: self.fetchedThumbnailImages)
@@ -94,8 +94,8 @@ extension PhotoManager {
                 if let data = data, let image = UIImage(data: data) {
                     // Get the file name from the asset's local identifier
                     let id = PHAssetResource.assetResources(for: asset).first?.assetLocalIdentifier
-                    self.previewRealImages.insert(image, at: index)
-                    self.realImageInfo.insert(id ?? "", at: index)
+                    self.previewRealImages.insert(image, at: index % 10)
+                    self.realImageInfo.insert(id ?? "", at: index % 10)
                     
                     if index == endIndex {
                         OnSuccess(self.previewRealImages, self.realImageInfo)

@@ -128,7 +128,7 @@ extension ViewController {
     @objc func infoButtonPressed(_ sender: UITapGestureRecognizer) {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
         vc.currentImage = self.currentImageView.image
-        vc.imageName = self.imageName[currentIndex ?? 0]
+        vc.imageName = PhotoManager().realImageInfo[currentIndex! % 10 ?? 0]
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -166,8 +166,8 @@ extension ViewController : PhotosDataTransferComunicationaDelegate {
     
     func didReceiveOriginalImage(image: UIImage, imageInfo: String) {
         DispatchQueue.main.async { [weak self] in
-            self?.currentImageView.image = self?.photoManager.previewRealImages[self?.currentIndex ?? 0]
-            self?.imageName[self?.currentIndex ?? 0] = imageInfo
+            self?.currentImageView.image = self?.photoManager.previewRealImages[(self?.currentIndex ?? 0) % 10]
+            self?.imageName[(self?.currentIndex ?? 0) % 10] = imageInfo
         }
     }
     
@@ -209,23 +209,25 @@ extension ViewController {
             start = index - 1
             end = index + 1
         }
-        if index < self.photoManager.previewRealImages.count {
-            if let image = self.photoManager.previewRealImages[index] {
-                DispatchQueue.main.async { [weak self] in
-                    self?.currentImageView.image = image
-                }
-            } else {
-                self.fetchRealImage(start: start, end: end, index: index)
-            }
-        } else {
-            self.fetchRealImage(start: start, end: end,  index: index)
-        }
+//        if index < self.photoManager.previewRealImages.count {
+//            if let image = self.photoManager.previewRealImages[index] {
+//                DispatchQueue.main.async { [weak self] in
+//                    self?.currentImageView.image = image
+//                }
+//            } else {
+//                self.fetchRealImage(start: start, end: end, index: index)
+//            }
+//        } else {
+//            self.fetchRealImage(start: start, end: end,  index: index)
+//        }
+        self.fetchRealImage(start: start, end: end,  index: index)
     }
     
     func fetchRealImage(start : Int, end : Int, index : Int) {
         self.photoManager.fetchPreviewImagesWithNames(startIndex: start, endIndex: end, OnSuccess: { photos, infoArray in
             DispatchQueue.main.async { [weak self] in
-                self?.currentImageView.image = self?.photoManager.previewRealImages[index]
+                self?.currentIndex = index - 1
+                self?.currentImageView.image = self?.photoManager.previewRealImages[index % 10]
                 self?.imageName = infoArray
             }
         })
