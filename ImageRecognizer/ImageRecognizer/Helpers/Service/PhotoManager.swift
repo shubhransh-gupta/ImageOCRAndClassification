@@ -81,16 +81,12 @@ extension PhotoManager {
             return
         }
         
-//        self.previewRealImages.removeAll()
-//        self.realImageInfo.removeAll()
+        self.previewRealImages.removeAll()
+        self.realImageInfo.removeAll()
         
         for index in startIndex...endIndex {
             let asset = self.allPHAssets[index]
             let imageManager = PHImageManager.default()
-            
-            self.previewRealImages.removeAll()
-            self.realImageInfo.removeAll()
-            
             let requestOptions = PHImageRequestOptions()
             requestOptions.isSynchronous = true
             imageManager.requestImageDataAndOrientation(for: asset, options: requestOptions) { data, _, _, info in
