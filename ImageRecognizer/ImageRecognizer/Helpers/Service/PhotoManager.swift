@@ -88,14 +88,17 @@ extension PhotoManager {
             let asset = self.allPHAssets[index]
             let imageManager = PHImageManager.default()
             
+            self.previewRealImages.removeAll()
+            self.realImageInfo.removeAll()
+            
             let requestOptions = PHImageRequestOptions()
             requestOptions.isSynchronous = true
             imageManager.requestImageDataAndOrientation(for: asset, options: requestOptions) { data, _, _, info in
                 if let data = data, let image = UIImage(data: data) {
                     // Get the file name from the asset's local identifier
                     let id = PHAssetResource.assetResources(for: asset).first?.assetLocalIdentifier
-                    self.previewRealImages.insert(image, at: index % 10)
-                    self.realImageInfo.insert(id ?? "", at: index % 10)
+                    self.previewRealImages.append(image)
+                    self.realImageInfo.append(id ?? "")
                     
                     if index == endIndex {
                         OnSuccess(self.previewRealImages, self.realImageInfo)
@@ -113,14 +116,14 @@ extension PhotoManager {
             return
         }
         //image to delete for preview
-        self.previewRealImages.remove(at: evictionIndex)
-        self.realImageInfo.remove(at: evictionIndex)
+        self.previewRealImages.removeFirst()
+        self.realImageInfo.removeFirst()
         
         let asset = self.allPHAssets[imageIndex]
         let imageManager = PHImageManager.default()
         
         let requestOptions = PHImageRequestOptions()
-        requestOptions.isSynchronous = true
+        requestOptions.isSynchronous = false
         
         imageManager.requestImageDataAndOrientation(for: asset, options: requestOptions) { data, _, _, info in
             if let data = data, let image = UIImage(data: data) {

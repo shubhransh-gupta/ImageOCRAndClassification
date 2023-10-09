@@ -166,8 +166,8 @@ extension ViewController : PhotosDataTransferComunicationaDelegate {
     
     func didReceiveOriginalImage(image: UIImage, imageInfo: String) {
         DispatchQueue.main.async { [weak self] in
-            self?.currentImageView.image = self?.photoManager.previewRealImages[(self?.currentIndex ?? 0) % 10]
-            self?.imageName[(self?.currentIndex ?? 0) % 10] = imageInfo
+            self?.currentImageView.image = self?.photoManager.previewRealImages.last ?? UIImage(named: "defaultIcon")
+            self?.imageName.append(self?.photoManager.realImageInfo.last ?? "")
         }
     }
     
@@ -226,9 +226,9 @@ extension ViewController {
     func fetchRealImage(start : Int, end : Int, index : Int) {
         self.photoManager.fetchPreviewImagesWithNames(startIndex: start, endIndex: end, OnSuccess: { photos, infoArray in
             DispatchQueue.main.async { [weak self] in
-                self?.currentIndex = index - 1
-                self?.currentImageView.image = self?.photoManager.previewRealImages[index % 10]
-                self?.imageName = infoArray
+                self?.currentIndex = index
+                self?.currentImageView.image = self?.photoManager.previewRealImages.last ?? UIImage(named: "defaultIcon")
+                self?.imageName.append(self?.photoManager.realImageInfo.last ?? "")
             }
         })
     }

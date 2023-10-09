@@ -114,7 +114,6 @@ extension ViewController : UICollectionViewDelegateFlowLayout {
         // Calculate the cell size here
         let cellWidth: CGFloat = self.previewCollectionView.frame.size.width / 11 // Set your desired width
         let cellHeight: CGFloat = 100 // Set your desired height
-        print("Shubhransh Gupta")
         return CGSize(width: cellWidth, height: cellHeight)
     }
 }
